@@ -1,0 +1,411 @@
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.busca {
+    margin: 20px 0;
+}
+
+.busca input {
+    width: 100%;
+    padding: 10px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.card {
+    width: 250px;
+    cursor: pointer;
+}
+
+/* Aplica box-sizing para facilitar o controle de tamanho dos elementos */
+*{
+    box-sizing: border-box;
+}
+
+/* Estilo geral da página */
+body {
+    background-color: rgb(0, 10, 32); /* Fundo azul escuro */
+    margin: 0; /* Remove margens padrão */
+}
+
+/* Acessibilidade: destaque ao navegar com teclado */
+a:focus-visible, .card:focus-visible {
+    outline: 3px solid yellow;
+    outline-offset: 3px;
+}
+
+/* Remove outline padrão ao focar com mouse */
+a:focus,
+.card:focus {
+    outline: none;
+}
+
+/* Cabeçalho */
+header{
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Título principal */
+header h1{
+    font-family: "Sixtyfour", sans-serif;
+    color: yellow;
+    font-size: clamp(40px,6vw,70px); /* Responsivo */
+    margin: clamp(10px, 2vw, 20px) 0 5px 0;
+}
+
+/* Imagem do header */
+.headerImage{
+    width: 100%;
+    height: clamp(150px,20vw,280px);
+    background-image: url("/assets/menuReceitas/Page/headerImage.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Menu de navegação */
+nav{
+    width: 100%;
+    background: rgba(0, 10, 32); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(10px,2vw,25px);
+    padding: 10px 0 20px 0;
+}
+
+/* Links do menu */
+nav a{
+    font-family: "Pixelify Sans", sans-serif;
+    text-decoration: none;
+    color: yellow;
+    font-size: clamp(14px,2vw,22px);
+    padding: 0 10px;
+    -webkit-text-stroke: 0.2px white;
+}
+
+/* Separadores do menu */
+nav span {
+    color: yellow;
+    -webkit-text-stroke: 0.2px white;
+}
+
+/* Efeito hover/focus nos links */
+nav a:hover,
+nav a:focus {
+    color: white;
+}
+
+/* Banner (carrossel) */
+.banner {
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    margin: clamp(20px,4vw,40px) auto;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid yellow;
+    position: relative;
+}
+
+/* Slides do banner */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Invisível por padrão */
+    transition: opacity 1s;
+}
+
+/* Slide ativo */
+.slide.ativo {
+    opacity: 1;
+}
+
+/* BOTÕES (setas do carrossel) */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: white;
+    border: none;
+    font-size: clamp(25px,4vw,40px);
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+/* Posicionamento das setas */
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Efeito ao passar o mouse */
+.prev:hover, .next:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* Campo de busca */
+.busca {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+/* Input da busca */
+.busca input {
+    width: clamp(200px, 40%, 400px);
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: clamp(14px,2vw,16px);
+    outline: none;
+    background-color: #051330;
+    color: white;
+    border: 2px solid yellow;
+}
+
+/* Placeholder */
+.busca input::placeholder {
+    color: #ccc;
+}
+
+/* Grid de cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; 
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* Card individual */
+.card {
+    background: #051330;
+    border-radius: 15px;
+    border: 2px solid yellow;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    min-height: 300px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Imagem do card */
+.card img {
+    width: 100%;
+    height: 160px; 
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Efeito ao passar mouse */
+.card:hover,
+.card:focus {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px yellow;
+}
+
+/* Conteúdo interno do card */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* Título do card */
+.card-content h3 {
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: clamp(20px,2vw,25px);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Texto do card */
+.card-content p {
+    color: white; 
+    font-family: "Jersey 10", sans-serif;
+    font-size: clamp(18px,1.5vw,18px);
+    font-weight: 300;
+    text-align: justify; 
+}
+
+/* Link que envolve o card */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Seção do formulário */
+.form-section {
+    width: 90%;
+    max-width: 1100px;
+    margin: 80px auto 60px auto; /* espaço entre cards e footer */
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #051330;
+    border: 2px solid yellow;
+    border-radius: 15px;
+}
+
+/* Título do formulário */
+.form-section h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+/* Formulário */
+#formSugestao {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Inputs e textarea */
+#formSugestao input,
+#formSugestao textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid yellow;
+    background-color: #051330;
+    color: white;
+    font-size: 16px;
+}
+
+/* Ajuste do textarea */
+#formSugestao textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Botão */
+#formSugestao button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: yellow;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+#formSugestao button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px yellow;
+}
+
+/* Mensagem de erro */
+#msgErro {
+    color: red;
+    font-size: 14px;
+}
+
+/* Rodapé */
+.footerDoSite {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    background-color: rgb(0, 6, 20);
+    padding: 40px 5%;
+    margin-top: 60px;
+}
+
+/* Colunas do footer */
+.footerDoSite .about,
+.footerDoSite .turma,
+.footerDoSite .integrantes {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Títulos do footer */
+.about h3,
+.turma h3,
+.integrantes h3{
+    font-family: "Pixelify Sans", sans-serif;
+    color: yellow;
+    text-align: center;
+    -webkit-text-stroke: 0.1px white;
+}
+
+/* Textos do footer */
+.about p,
+.turma p,
+.integrantes p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: white;
+}
+
+/* Ajustes específicos */
+.about p{
+    text-align: justify;
+}
+
+.turma p,
+.integrantes p{
+    text-align: center;
+}
+
+/* Rolagem suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animação de destaque */
+.highlight h3,
+.highlight p {
+    animation: piscarTexto 1s ease-in-out ;
+}
+
+/* Keyframes da animação */
+@keyframes piscarTexto {
+
+    0% {
+        -webkit-text-stroke: 0.1px white;
+        text-shadow: none;
+    }
+
+    50% {
+        -webkit-text-stroke: 0.1px white;
+        text-shadow: 0 0 5px yellow, 0 0 5px yellow;
+    }
+
+    100% {
+        -webkit-text-stroke: 0.1px white;
+        text-shadow: none;
+    }
+}
