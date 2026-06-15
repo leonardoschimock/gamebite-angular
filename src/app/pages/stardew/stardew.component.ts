@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -12,4 +12,9 @@ import { RouterLink } from '@angular/router';
   templateUrl: './stardew.component.html',
   styleUrl: './stardew.component.css'
 })
-export class StardewComponent {}
+
+export class StardewComponent implements OnInit {
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
+}

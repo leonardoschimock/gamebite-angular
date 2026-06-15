@@ -4,11 +4,11 @@
         <nav aria-label="Menu principal">
             <a routerLink="/">Início</a>
             <span>|</span>
-            <a href="#footerAbout">Sobre nós</a>
+            <a href="#footerAbout" (click)="destacarSecao('footerAbout', $event)">Sobre nós</a>
             <span>|</span>
-            <a href="#footerTurma">Turma</a>
+            <a href="#footerTurma" (click)="destacarSecao('footerTurma', $event)">Turma</a>
             <span>|</span>
-            <a href="#footerIntegrantes">Integrantes</a>
+            <a href="#footerIntegrantes" (click)="destacarSecao('footerIntegrantes', $event)">Integrantes</a>
             <span>|</span>
             <a routerLink="/">Jogos</a>
         </nav>
@@ -20,76 +20,44 @@
         <!-- MENU / HERO -->
         <section class="menu">
             <!-- CARROSSEL -->
-            <div class="banner">
-                <div class="slides">
-                    <img
-                        *ngFor="let slide of slides; let i = index"
-                        [src]="slide.src"
-                        [alt]="slide.alt"
-                        [class.ativo]="i === currentSlide"
-                        class="slide">
+        <div class="banner">
+            <img
+                *ngFor="let slide of slides; let i = index"
+                [src]="slide.src"
+                [alt]="slide.alt"
+                class="slide"
+                [class.ativo]="i === currentSlide()">
+        </div>
+        <!-- BUSCA -->
+        <section class="busca" aria-label="Busca de jogos">
+            <input type="text" id="searchInput" [(ngModel)]="busca" placeholder="Buscar Jogo..." aria-label="Buscar jogo">
+        </section>
+        <!-- CARDS -->
+        <section class="cards" aria-label="Lista de jogos">
+            <a *ngFor="let jogo of jogosFiltrados" [routerLink]="jogo.rota" class="card-link">
+            <article class="card">
+                <img [src]="jogo.imagem" [alt]="jogo.nome">
+                <div class="card-content">
+                    <h3>{{ jogo.nome }}</h3>
+                    <p>
+                        {{ jogo.descricao }}
+                    </p>
                 </div>
-                <button class="prev" aria-label="Slide anterior">&#10094;</button>
-                <button class="next" aria-label="Próximo slide">&#10095;</button>
-            </div>
-            <!-- BUSCA -->
-            <section class="busca" aria-label="Busca de jogos">
-                <input type="text" 
-                    id="searchInput" 
-                    placeholder="Buscar Jogo..." 
-                    aria-label="Buscar jogo">
-            </section>
-            <!-- CARDS -->
-            <section class="cards" aria-label="Lista de jogos">
-                <a routerLink="/minecraft" class="card-link">
-                    <article class="card">
-                        <img src="/assets/images/cardMine.jpg" alt="Minecraft">
-                        <div class="card-content">
-                            <h3>Minecraft</h3>
-                            <p>
-                                Jogo de sandbox criativo onde jogadores exploram mundos infinitos, constroem estruturas, 
-                                sobrevivem a perigos e liberam imaginação em aventuras únicas.
-                            </p>
-                        </div>
-                    </article>
-                </a>
-                <a routerLink="/overcooked" class="card-link">
-                    <article class="card">
-                        <img src="/assets/images/cardOvercooked.jpg" alt="Overcooked">
-                        <div class="card-content">
-                            <h3>OverCooked</h3>
-                            <p>
-                                Jogo cooperativo caótico de culinária onde equipes preparam pratos rapidamente, 
-                                coordenando tarefas sob pressão crescente em cozinhas malucas e desafiadoras.
-                            </p>
-                        </div>
-                    </article>
-                </a>
-                <a routerLink="/stardew" class="card-link">
-                    <article class="card">
-                        <img src="/assets/menuReceitas/StardewValley/stardewvalleyIcon.jpg" 
-                            alt="Stardew Valley">
-                        <div class="card-content">
-                            <h3>Stardew Valley</h3>
-                            <p>
-                                Simulador relaxante de fazenda onde jogador cultiva plantações, cria animais, faz amizades, 
-                                explora cavernas e desenvolve vida tranquila no campo.
-                            </p>
-                        </div>
-                    </article>
-                </a>
-            </section>
+            </article>
+            </a>
+
+</section>
         </section>
         <!-- FORMULÁRIO -->
         <section class="form-section" aria-labelledby="titulo-form">
             <h2 id="titulo-form">Sugira um jogo ou receita</h2>
-            <form id="formSugestao">
-                <input type="text" id="nome" placeholder="Seu nome" aria-label="Seu nome">
-                <input type="email" id="email" placeholder="Seu email" aria-label="Seu email">
-                <input type="text" id="jogo" placeholder="Nome do jogo" aria-label="Nome do jogo">
-                <textarea id="mensagem" placeholder="Sugestão de receita ou ideia..." aria-label="Mensagem"></textarea>
+            <form id="formSugestao" (ngSubmit)="enviarFormulario()">
+                <input type="text" name="nome" [(ngModel)]="nome" placeholder="Seu nome">
+                <input type="email" name="email" [(ngModel)]="email" placeholder="Seu email">
+                <input type="text" name="jogo" [(ngModel)]="jogo" placeholder="Nome do jogo">
+                <textarea name="mensagem" [(ngModel)]="mensagem" placeholder="Sugestão de receita ou ideia..."></textarea>
                 <button type="submit">Enviar Sugestão</button>
-                <p id="msgErro"></p>
+                <p id="msgErro" [style.color]="corMensagem"> {{ mensagemFormulario }}</p>
             </form>
         </section>
     </main>
@@ -102,7 +70,7 @@
                 Aqui você encontra receitas inspiradas nos seus jogos favoritos pra
                 finalmente provar aquelas comidas que sempre deram vontade.
                 Bora matar a nostalgia, testar coisas novas e transformar o mundo gamer
-                em algo real e delicioso!            
+                em algo real e delicioso!
             </p>
         </section>
         <section class="turma" id="footerTurma">
