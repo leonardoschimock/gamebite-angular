@@ -17,4 +17,21 @@ export class MinecraftComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 0);
   }
+
+  destacarSecao(id: string, event: Event): void {
+  event.preventDefault();
+  const elemento = document.getElementById(id);
+  if (!elemento) return;
+  elemento.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+  });
+  elemento.classList.remove('highlight');
+  setTimeout(() => {
+      elemento.classList.add('highlight');
+      setTimeout(() => {
+          elemento.classList.remove('highlight');
+      }, 2000);
+  }, 500);
+  }
 }

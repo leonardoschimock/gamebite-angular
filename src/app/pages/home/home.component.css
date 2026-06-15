@@ -375,25 +375,6 @@ html {
     animation: glowSection 2s ease-in-out;
 }
 
-/* Keyframes da animação */
-@keyframes piscarTexto {
-
-    0% {
-        -webkit-text-stroke: 0.1px white;
-        text-shadow: none;
-    }
-
-    50% {
-        -webkit-text-stroke: 0.1px white;
-        text-shadow: 0 0 5px yellow, 0 0 5px yellow;
-    }
-
-    100% {
-        -webkit-text-stroke: 0.1px white;
-        text-shadow: none;
-    }
-}
-
 @keyframes glowSection {
 
     0% {
