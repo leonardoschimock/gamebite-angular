@@ -1,59 +1,82 @@
-# MyAngularApp
+# Project Name
+> Outline a brief description of your project.
+> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Usage](#usage)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
+<!-- * [License](#license) -->
 
-## Development server
 
-To start a local development server, run:
+## General Information
+- Provide general information about your project here.
+- What problem does it (intend to) solve?
+- What is the purpose of your project?
+- Why did you undertake it?
+<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Technologies Used
+- Tech 1 - version 1.0
+- Tech 2 - version 2.0
+- Tech 3 - version 3.0
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Features
+List the ready features here:
+- Awesome feature 1
+- Awesome feature 2
+- Awesome feature 3
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Screenshots
+![Example screenshot](/src/assets/images/cardMine.jpg)
+<!-- If you have screenshots you'd like to share, include them here. -->
 
-```bash
-ng generate --help
-```
 
-## Building
+## Setup
+What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
-To build the project run:
+Proceed to describe how to install / setup one's local environment / get started with the project.
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Usage
+How does one go about using it?
+Provide various use cases and code examples here.
 
-## Running unit tests
+`write-your-code-here`
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
 
-```bash
-ng test
-```
+## Project Status
+Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+## Room for Improvement
+Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
-```bash
-ng e2e
-```
+Room for improvement:
+- Improvement to be done 1
+- Improvement to be done 2
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+To do:
+- Feature to be added 1
+- Feature to be added 2
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Acknowledgements
+Give credit here.
+- This project was inspired by...
+- This project was based on [this tutorial](https://www.example.com).
+- Many thanks to...
+
+
+## Contact
+Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
