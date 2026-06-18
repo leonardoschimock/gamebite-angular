@@ -1,25 +1,26 @@
-    <!-- HEADER -->
-    <header>
-        <h1>GameBite</h1>
-        <nav aria-label="Menu principal">
-            <a routerLink="/">Início</a>
-            <span>|</span>
-            <a href="#footerAbout" (click)="destacarSecao('footerAbout', $event)">Sobre nós</a>
-            <span>|</span>
-            <a href="#footerTurma" (click)="destacarSecao('footerTurma', $event)">Turma</a>
-            <span>|</span>
-            <a href="#footerIntegrantes" (click)="destacarSecao('footerIntegrantes', $event)">Integrantes</a>
-            <span>|</span>
-            <a routerLink="/">Jogos</a>
-        </nav>
-        <div class="headerImage" role="img" aria-label="Imagem temática do site GameBite"></div>
-    </header>
+<!-- HEADER -->
+<header>
+    <h1>GameBite</h1>
+    <nav aria-label="Menu principal">
+        <a routerLink="/">Início</a>
+        <span>|</span>
+        <a href="#footerAbout" (click)="destacarSecao('footerAbout', $event)">Sobre nós</a>
+        <span>|</span>
+        <a href="#footerTurma" (click)="destacarSecao('footerTurma', $event)">Turma</a>
+        <span>|</span>
+        <a href="#footerIntegrantes" (click)="destacarSecao('footerIntegrantes', $event)">Integrantes</a>
+        <span>|</span>
+        <a href="#busca">Jogos</a>
+    </nav>
+    <div class="headerImage" role="img" aria-label="Imagem temática do site GameBite"></div>
+</header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main>
-        <!-- MENU / HERO -->
-        <section class="menu">
-            <!-- CARROSSEL -->
+<!-- CONTEÚDO PRINCIPAL -->
+
+<main>
+<!-- MENU / HERO -->
+    <section class="menu">
+        <!-- CARROSSEL -->
         <div class="banner">
             <img
                 *ngFor="let slide of slides; let i = index"
@@ -28,43 +29,48 @@
                 class="slide"
                 [class.ativo]="i === currentSlide()">
         </div>
-        <!-- BUSCA -->
-        <section class="busca" aria-label="Busca de jogos">
+
+    <!-- BUSCA -->
+        <section class="busca" aria-label="Busca de jogos" id="busca">
             <input type="text" id="searchInput" [(ngModel)]="busca" placeholder="Buscar Jogo..." aria-label="Buscar jogo">
         </section>
-        <!-- CARDS -->
-        <section class="cards" aria-label="Lista de jogos">
-            <a *ngFor="let jogo of jogosFiltrados" [routerLink]="jogo.rota" class="card-link">
-            <article class="card">
-                <img [src]="jogo.imagem" [alt]="jogo.nome">
-                <div class="card-content">
-                    <h3>{{ jogo.nome }}</h3>
-                    <p>
-                        {{ jogo.descricao }}
-                    </p>
-                </div>
-            </article>
-            </a>
 
-</section>
+    <!-- CARDS -->
+        <section class="cards" aria-label="Lista de jogos" id="listaJogos">
+            <a *ngFor="let jogo of jogosFiltrados" [routerLink]="jogo.rota" class="card-link">
+                <article class="card">
+                    <img [src]="jogo.imagem" [alt]="jogo.nome">
+                        <div class="card-content">
+                            <h3>{{ jogo.nome }}</h3>
+                                <p>
+                                    {{ jogo.descricao }}
+                                </p>
+                        </div>
+                </article>
+            </a>
         </section>
-        <!-- FORMULÁRIO -->
-        <section class="form-section" aria-labelledby="titulo-form">
-            <h2 id="titulo-form">Sugira um jogo ou receita</h2>
-            <form id="formSugestao" (ngSubmit)="enviarFormulario()">
-                <input type="text" name="nome" [(ngModel)]="nome" placeholder="Seu nome">
-                <input type="email" name="email" [(ngModel)]="email" placeholder="Seu email">
-                <input type="text" name="jogo" [(ngModel)]="jogo" placeholder="Nome do jogo">
-                <textarea name="mensagem" [(ngModel)]="mensagem" placeholder="Sugestão de receita ou ideia..."></textarea>
-                <button type="submit">Enviar Sugestão</button>
-                <p id="msgErro" [style.color]="corMensagem"> {{ mensagemFormulario }}</p>
-            </form>
-        </section>
-    </main>
-    <!-- FOOTER -->
-    <footer class="footerDoSite" id="footer">
-        <section class="about" id="footerAbout">
-            <h3>Sobre Nós</h3>
+    </section>
+
+    <!-- FORMULÁRIO -->
+
+    <section class="form-section" aria-labelledby="titulo-form">
+        <h2 id="titulo-form">Sugira um jogo ou receita</h2>
+        <form id="formSugestao" (ngSubmit)="enviarFormulario()">
+            <input type="text" name="nome" [(ngModel)]="nome" placeholder="Seu nome">
+            <input type="email" name="email" [(ngModel)]="email" placeholder="Seu email">
+            <input type="text" name="jogo" [(ngModel)]="jogo" placeholder="Nome do jogo">
+            <textarea name="mensagem" [(ngModel)]="mensagem" placeholder="Sugestão de receita ou ideia..."></textarea>
+            <button type="submit">Enviar Sugestão</button>
+            <p id="msgErro" [style.color]="corMensagem"> {{ mensagemFormulario }}</p>
+        </form>
+    </section>
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footerDoSite" id="footer">
+    <section class="about" id="footerAbout">
+        <h3>Sobre Nós</h3>
             <p>
                 A GameBite é pra quem ama games e quer levar essa paixão pra cozinha.
                 Aqui você encontra receitas inspiradas nos seus jogos favoritos pra
@@ -72,20 +78,20 @@
                 Bora matar a nostalgia, testar coisas novas e transformar o mundo gamer
                 em algo real e delicioso!
             </p>
-        </section>
-        <section class="turma" id="footerTurma">
-            <h3>Nossa Turma</h3>
+    </section>
+    <section class="turma" id="footerTurma">
+        <h3>Nossa Turma</h3>
             <p>
                 Centro Universitário Cesumar <br><br>
                 Engenharia de Software <br><br>
                 ESOFT B Noturno
             </p>
-        </section>
-        <section class="integrantes" id="footerIntegrantes">
-            <h3>Desenvolvedores do Site</h3>
+    </section>
+    <section class="integrantes" id="footerIntegrantes">
+        <h3>Desenvolvedores do Site</h3>
             <p>
                 Jean Carlos Siqueira dos Santos <br><br>
                 Leonardo Schimock Silveira <br><br>
             </p>
-        </section>
-    </footer>
+    </section>
+</footer>

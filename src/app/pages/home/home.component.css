@@ -113,33 +113,6 @@ nav a:focus {
     z-index: 2;
 }
 
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    color: white;
-    border: none;
-    font-size: clamp(25px,4vw,40px);
-    cursor: pointer;
-    z-index: 10;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Efeito ao passar o mouse */
-.prev:hover, .next:hover {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.2);
-}
-
 /* Campo de busca */
 .busca {
     display: flex;
