@@ -1,82 +1,165 @@
-# Project Name
-> Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+# GameBite
 
-## Table of Contents
-* [General Info](#general-information)
-* [Technologies Used](#technologies-used)
-* [Features](#features)
-* [Screenshots](#screenshots)
-* [Setup](#setup)
-* [Usage](#usage)
-* [Project Status](#project-status)
-* [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
+> Plataforma web desenvolvida em Angular para recomendação e exploração de jogos digitais, permitindo aos usuários visualizar informações, categorias e destaques de diversos títulos de forma intuitiva e organizada.
 
+## Sumário
 
-## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+* [Informações Gerais](#informações-gerais)
+* [Tecnologias Utilizadas](#tecnologias-utilizadas)
+* [Funcionalidades](#funcionalidades)
+* [Capturas de Tela](#capturas-de-tela)
+* [Instalação](#instalação)
+* [Utilização](#utilização)
+* [Status do Projeto](#status-do-projeto)
+* [Melhorias Futuras](#melhorias-futuras)
+* [Contato](#contato)
 
 
-## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
+## Informações Gerais
+
+O GameBite é uma aplicação web desenvolvida como projeto acadêmico com o objetivo de aplicar conceitos de desenvolvimento Front-End utilizando Angular.
+
+O sistema foi criado para apresentar jogos suas respectivas receitas gastronômicas de maneira organizada e atrativa, oferecendo ao usuário uma experiência semelhante à encontrada em plataformas de catálogo e recomendação de games.
+
+### Objetivos do Projeto
+
+* Praticar o desenvolvimento de aplicações SPA (Single Page Application).
+* Aplicar conceitos de componentização utilizando Angular.
+* Desenvolver uma interface moderna e responsiva.
+* Trabalhar com roteamento e organização de componentes.
+* Consolidar conhecimentos de HTML, CSS e TypeScript.
 
 
-## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+## Tecnologias Utilizadas
+
+* Angular 20
+* TypeScript
+* HTML5
+* CSS3
+* Angular Router
+* Git/GitHub
 
 
-## Screenshots
-![Example screenshot](/src/assets/images/cardMine.jpg)
-<!-- If you have screenshots you'd like to share, include them here. -->
+## Funcionalidades
+
+Funcionalidades implementadas:
+
+* Página inicial com destaque para jogos.
+* Exibição de jogos e receitas em formato de cards.
+* Navegação entre páginas utilizando Angular Router.
+* Interface responsiva.
+* Organização dos conteúdos por categorias.
 
 
-## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
+## Capturas de Tela
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
-
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
-
-
-## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
-
-
-## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
-Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-- Feature to be added 1
-- Feature to be added 2
+<table>
+  <tr>
+    <td align="center">
+      <img src="src/assets/screenshots/home.png" width="300"><br>
+      <b>Home Page</b>
+    </td>
+    <td align="center">
+      <img src="src/assets/screenshots/minecraft.png" width="148"><br>
+      <b>Minecraft</b>
+      <br><br>
+      <img src="src/assets/screenshots/overcooked.png" width="148"><br>
+      <b>Overcooked</b>
+      <br><br>
+      <img src="src/assets/screenshots/stardew.png" width="148"><br>
+      <b>Stardew Valley</b>
+    </td>
+  </tr>
+</table>
 
 
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+## Instalação
+
+### Pré-requisitos
+
+* Node.js instalado
+
+```bash
+node --version       // v24.15.0
+```
+
+* Angular CLI instalada globalmente
+
+```bash
+npm install -g @angular/cli
+```
+
+### Clonando o projeto
+
+```bash
+git clone https://github.com/leonardoschimock/gamebite-angular.git
+```
+
+### Acessando a pasta
+
+```bash
+cd gamebite-angular
+```
+
+### Instalando dependências
+
+```bash
+npm install
+```
+
+### Executando o projeto
+
+```bash
+ng serve
+```
+
+ou:
+
+```bash
+npm start
+```
+
+A aplicação estará disponível em:
+
+```text
+http://localhost:4200
+```
 
 
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+## Utilização
+
+Após iniciar a aplicação:
+
+1. Acesse a página inicial.
+2. Navegue pelos jogos disponíveis.
+3. Explore as dos jogso disponíveis.
+4. Utilize os menus de navegação para acessar as diferentes seções do site.
+
+
+## Status do Projeto
+
+Projeto: **Concluído**
+
+O projeto foi desenvolvido para fins acadêmicos e atende aos requisitos propostos para a disciplina.
+
+
+## Melhorias Futuras
+
+### Possíveis melhorias:
+
+* Integração com API de jogos.
+* Sistema de favoritos.
+* Cadastro e login de usuários.
+* Filtros avançados por gênero e plataforma.
+* Página individual para cada jogo.
+
+### Próximas funcionalidades
+
+* Implementação de banco de dados.
+* Sistema de avaliações.
+* Recomendações personalizadas.
+
+
+## Contato
+
+Desenvolvido por **[Leonardo Schimock](github.com/leonardoschimock) e Jean Carlos**
